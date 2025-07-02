@@ -132,8 +132,18 @@ class Exercise1Test {
     @Test
     void itShouldGetTopStudents() {
         //given
+        List<Student> students =
+                List.of(new Student("Newton", 10),
+                        new Student("Newmer", 99),
+                        new Student("Erina", 99));
+
+        List<Student> maus = List.of(new Student("Newmer", 99),
+                new Student("Erina", 99));
         //when
+        List<Student> actual = underTest.getTopStudents(students, 90);
+
         //Assert
+        assertThat(actual).isEqualTo(maus);
     }
 
     @Test

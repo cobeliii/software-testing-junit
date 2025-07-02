@@ -49,7 +49,7 @@ public class Exercise1 {
     public List<Student> getTopStudents(List<Student> students, int threshold) {
         if (students == null) return List.of();
         return students.stream()
-                .filter(s -> s.score() <= threshold)
+                .filter(s -> s.score() >= threshold)
                 .sorted((a, b) -> Integer.compare(b.score(), a.score()))
                 .toList();
     }
